@@ -21,6 +21,8 @@ public class WordsService {
 
     private final List<String> adjectivesWordsList;
 
+    private final List<Character> specialCharactersList;
+
     @PostConstruct
     private void generatePrefixWords() {
         prefixWordsList.add("Killer");
@@ -37,6 +39,9 @@ public class WordsService {
         adjectivesWordsList.add("Immortal");
         adjectivesWordsList.add("Cringy");
         adjectivesWordsList.add("Sneaky");
-    }
 
+        specialCharactersList.add('\u2601');
+        specialCharactersList.add('\u2605');
+        specialCharactersList.add('\u2620');
+    }
 }

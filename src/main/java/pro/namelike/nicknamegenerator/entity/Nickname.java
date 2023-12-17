@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Nickname {
-    private String name;
+    private String firstName;
     private String lastName;
     private boolean hasPostfix;
     private boolean hasSpecialCharacters;
