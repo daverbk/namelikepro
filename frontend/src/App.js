@@ -1,0 +1,19 @@
+import {Component} from "react";
+import {Route, Router, Switch} from "react-router-dom";
+import Home from "./Home";
+import { createBrowserHistory } from 'history'
+const newHistory = createBrowserHistory();
+
+class App extends Component {
+    render() {
+        return (
+            <Router history={newHistory}>
+                <Switch>
+                    <Route path='/' exact={true} component={Home}/>
+                </Switch>
+            </Router>
+        )
+    }
+}
+
+export default App;
