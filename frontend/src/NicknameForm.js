@@ -66,6 +66,7 @@ class NicknameForm extends Component {
 
         return (
             <form className="nickname-form">
+                <h2>Start</h2>
                 <div className="form-group">
                     <input
                         type="text"
@@ -122,10 +123,12 @@ class NicknameForm extends Component {
                         Has Adjective?
                     </label>
                 </div>
-                <div>{nickname === null ? '' : nickname.resultNickname}</div>
-                <button onClick={this.fetchData} type="submit" className="btn btn-primary">
+                <button onClick={this.fetchData} type="submit" className="start-button">
                     Submit
                 </button>
+                <div className="result">
+                    {nickname === null ? '' : nickname.resultNickname}
+                </div>
             </form>
         );
     }

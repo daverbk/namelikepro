@@ -5,7 +5,16 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <h2>Super duper form for nicknames</h2>
+                <div className="site-info">
+                    <h2 className="site-title">
+                        // change title
+                    </h2>
+                    <div className="site-description">
+                        <p>
+                            // change description
+                        </p>
+                    </div>
+                </div>
                 <NicknameForm/>
             </div>
         );
