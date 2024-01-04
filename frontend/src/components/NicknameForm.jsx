@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import button from "bootstrap/js/src/button";
 
+const SERVER_URL = 'http://localhost:8080';
+
 class NicknameForm extends Component {
     constructor(props) {
         super(props);
@@ -47,7 +49,7 @@ class NicknameForm extends Component {
         };
 
         try {
-            const response = await fetch('http://localhost:8080/generate', requestOptions);
+            const response = await fetch(SERVER_URL + '/generate', requestOptions);
             const data = await response.json();
             this.setState({nickname: data});
         } catch (error) {
