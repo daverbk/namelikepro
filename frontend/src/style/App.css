@@ -164,3 +164,15 @@
 .nickname-form input[type='text']:last-child {
     margin-bottom: 16px;
 }
+
+@media screen and (max-width: 768px) {
+    .site-info .site-description code {
+        font-size: 25px;
+    }
+
+    .nickname-form {
+        margin-left: 16px;
+        margin-right: 16px;
+        width: 100%;
+    }
+}
