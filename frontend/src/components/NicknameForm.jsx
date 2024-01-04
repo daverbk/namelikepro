@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class NicknameForm extends Component {
     constructor(props) {
@@ -9,20 +9,33 @@ class NicknameForm extends Component {
             hasPostfix: false,
             hasSpecialCharacters: false,
             hasAdjective: false,
-            nickname: null
+            nickname: null,
+            error: ''
         };
     }
 
     fetchData = async (event) => {
         event.preventDefault();
 
-        const { firstName, lastName, hasPostfix, hasSpecialCharacters, hasAdjective } = this.state;
+        if (this.state.firstName.trim().length === 0) {
+            this.setState({error: 'first name is required'});
+            return;
+        }
 
-        this.setState({ firstName: '', lastName: '', hasPostfix: false, hasSpecialCharacters: false, hasAdjective: false });
+        const {firstName, lastName, hasPostfix, hasSpecialCharacters, hasAdjective} = this.state;
+
+        this.setState({
+            firstName: '',
+            lastName: '',
+            hasPostfix: false,
+            hasSpecialCharacters: false,
+            hasAdjective: false,
+            error: ''
+        });
 
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 firstName: firstName,
                 lastName: lastName,
@@ -35,38 +48,37 @@ class NicknameForm extends Component {
         try {
             const response = await fetch('http://localhost:8080/generate', requestOptions);
             const data = await response.json();
-            this.setState({ nickname: data });
+            this.setState({nickname: data});
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
     };
 
     handleFirstNameChange = (event) => {
-        this.setState({ firstName: event.target.value });
+        this.setState({firstName: event.target.value});
     };
 
     handleLastNameChange = (event) => {
-        this.setState({ lastName: event.target.value });
+        this.setState({lastName: event.target.value});
     };
 
     handleHasPostfixChange = (event) => {
-        this.setState({ hasPostfix: event.target.checked });
+        this.setState({hasPostfix: event.target.checked});
     };
 
     handleHasSpecialCharactersChange = (event) => {
-        this.setState({ hasSpecialCharacters: event.target.checked });
+        this.setState({hasSpecialCharacters: event.target.checked});
     };
 
     handleHasAdjectiveChange = (event) => {
-        this.setState({ hasAdjective: event.target.checked });
+        this.setState({hasAdjective: event.target.checked});
     };
 
     render() {
-        const { firstName, lastName, hasPostfix, hasSpecialCharacters, hasAdjective, nickname } = this.state;
+        const {firstName, lastName, hasPostfix, hasSpecialCharacters, hasAdjective, nickname, error} = this.state;
 
         return (
             <form className="nickname-form">
-                <h2>Start</h2>
                 <div className="form-group">
                     <input
                         type="text"
@@ -76,6 +88,7 @@ class NicknameForm extends Component {
                         id="firstName"
                         placeholder="First Name"
                     />
+                    <label className="firstname" htmlFor="firstName">* is required</label>
                 </div>
                 <div className="form-group">
                     <input
@@ -88,7 +101,7 @@ class NicknameForm extends Component {
                     />
                 </div>
                 <div className="form-check">
-                    <input className="form-check-input"
+                <input className="form-check-input"
                            type="checkbox"
                            value={hasPostfix}
                            id="hasPostfix"
@@ -128,6 +141,9 @@ class NicknameForm extends Component {
                 </button>
                 <div className="result">
                     {nickname === null ? '' : nickname.resultNickname}
+                </div>
+                <div className="error">
+                    {error === null ? '' : error}
                 </div>
             </form>
         );

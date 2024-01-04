@@ -1,41 +1,3 @@
-body {
-    height: 100%;
-    /* max-height: 600px; */
-    width: 100%;
-    background-color: hsla(200,40%,30%,.4);
-    background-image:
-            url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'),
-            url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
-            url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
-            url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
-            url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
-    background-repeat: repeat-x;
-    background-position:
-            0 20%,
-            0 100%,
-            0 50%,
-            0 100%,
-            0 0;
-    background-size:
-            2500px,
-            800px,
-            500px 200px,
-            1000px,
-            400px 260px;
-    animation: 50s para infinite linear;
-}
-
-@keyframes para {
-    100% {
-        background-position:
-                -5000px 20%,
-                -800px 95%,
-                500px 50%,
-                1000px 100%,
-                400px 0;
-    }
-}
-
 .nickname-form {
     display: flex;
     flex-direction: column;
@@ -71,7 +33,7 @@ body {
 
 .nickname-form input[type='checkbox'] {
     background-image: -webkit-linear-gradient(hsla(0,0%,0%,.1), hsla(0,0%,100%,.1)),
-    -webkit-linear-gradient(left, #f66 50%, #6cf 50%);
+    -webkit-linear-gradient(left, #989898 50%, #6cf 50%);
     background-size: 100% 100%, 200% 100%;
     background-position: 0 0, 15px 0;
     border-radius: 25px;
@@ -150,9 +112,10 @@ body {
 }
 
 .site-info .site-title {
-    font-size: 30px;
+    font-size: 40px;
+    font-family: 'Rubik Doodle Shadow', serif;
     letter-spacing: -1px;
-    color: #FFF;
+    color: grey;
     text-transform: uppercase;
     text-shadow: 1px 1px 0 #000;
     margin: 10px 0 24px;
@@ -161,11 +124,43 @@ body {
 }
 
 .site-info .site-description {
-    color: #ffffff;
-    font-family: 'Merriweather', serif;
+    text-align: center;
+    color: black;
+    font-family: 'Source Code Pro', serif;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 700;
     line-height: 40px;
     margin: 0 30px 40px;
     text-shadow: #2a8d7b -1px -1px;
+}
+
+.site-info .site-description code {
+    color: #c25e62;
+    font-size: 50px;
+}
+
+.error {
+    font-style: italic;
+    font-size: 20px;
+    font-family: 'Rajdhani', serif;
+    text-align: center;
+    font-weight: 700;
+    color: red;
+}
+
+.nickname-form label.firstname {
+    font-style: italic;
+    font-size: 15px;
+    font-family: 'Rajdhani', serif;
+    color: #eeeeee;
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.nickname-form input[type='text']:first-child {
+    margin-bottom: 0;
+}
+
+.nickname-form input[type='text']:last-child {
+    margin-bottom: 16px;
 }
