@@ -7,12 +7,14 @@ class Home extends Component {
             <div>
                 <div className="site-info">
                     <h2 className="site-title">
-                        // change title
+                        Name Like Pro
                     </h2>
                     <div className="site-description">
                         <p>
-                            // change description
+                            Just enter two words and select if you want to add postfix / special characters / adjective :)
+                            If all the checks are activated you'll get something like
                         </p>
+                        <code>☠ CringySHunKiller ☠</code>
                     </div>
                 </div>
                 <NicknameForm/>
@@ -20,4 +22,5 @@ class Home extends Component {
         );
     }
 }
+
 export default Home;
