@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import button from "bootstrap/js/src/button";
 
 const SERVER_URL = 'http://localhost:8080';
 
@@ -80,6 +81,12 @@ class NicknameForm extends Component {
         this.setState({hasAdjective: event.target.checked});
     };
 
+    handleCopyToClipboard = (event) => {
+        event.preventDefault();
+        const copyText = document.getElementById("generation-result").innerText;
+        navigator.clipboard.writeText(copyText);
+    }
+
     render() {
         const {firstName, lastName, hasPostfix, hasSpecialCharacters, hasAdjective, nickname, error} = this.state;
 
@@ -107,7 +114,7 @@ class NicknameForm extends Component {
                     />
                 </div>
                 <div className="form-check">
-                <input className="form-check-input"
+                    <input className="form-check-input"
                            type="checkbox"
                            value={hasPostfix}
                            id="hasPostfix"
@@ -143,10 +150,15 @@ class NicknameForm extends Component {
                     </label>
                 </div>
                 <button onClick={this.fetchData} type="submit" className="start-button">
-                    Submit
+                    generate
                 </button>
                 <div className="result">
-                    {nickname === null ? '' : nickname.resultNickname}
+                    {nickname === null ? <p></p> :
+                        <div className="result-container">
+                            <p id={"generation-result"}>{nickname.resultNickname}</p>
+                            <button onClick={this.handleCopyToClipboard}>Copy to clipboard</button>
+                        </div>
+                    }
                 </div>
                 <div className="error">
                     {error === null ? '' : error}
