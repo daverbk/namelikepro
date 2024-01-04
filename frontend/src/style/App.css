@@ -1,0 +1,192 @@
+body {
+    background: linear-gradient(-45deg, #ffffff, rgba(184, 255, 206, 0.09));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+.nickname-form {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    padding: 40px;
+    background: rgba(0,0,0, 0.8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.nickname-form h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.nickname-form input[type='text'] {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.nickname-form input[type='checkbox'] {
+    background-image: -webkit-linear-gradient(hsla(0,0%,0%,.1), hsla(0,0%,100%,.1)),
+    -webkit-linear-gradient(to left, #989898 50%, #6cf 50%);
+    background-size: 100% 100%, 200% 100%;
+    background-position: 0 0, 15px 0;
+    border-radius: 25px;
+    box-shadow: inset 0 1px 4px hsla(0,0%,0%,.5),
+    inset 0 0 10px hsla(0,0%,0%,.5),
+    0 0 0 1px hsla(0,0%,0%,.1),
+    0 -1px 2px 2px hsla(0,0%,0%,.25),
+    0 2px 2px 2px hsla(0,0%,100%,.75);
+    cursor: pointer;
+    height: 25px;
+    padding-right: 25px;
+    width: 75px;
+    -webkit-appearance: none;
+    -webkit-transition: .25s;
+}
+
+.nickname-form input[type='checkbox']:after {
+    background-color: #eee;
+    background-image: -webkit-linear-gradient(hsla(0,0%,100%,.1), hsla(0,0%,0%,.1));
+    border-radius: 25px;
+    box-shadow: inset 0 1px 1px 1px hsla(0,0%,100%,1),
+    inset 0 -1px 1px 1px hsla(0,0%,0%,.25),
+    0 1px 3px 1px hsla(0,0%,0%,.5),
+    0 0 2px hsla(0,0%,0%,.25);
+    content: '';
+    display: block;
+    height: 25px;
+    width: 50px;
+}
+
+.nickname-form input[type='checkbox']:checked {
+    background-position: 0 0, 35px 0;
+    padding-left: 25px;
+    padding-right: 0;
+}
+
+.nickname-form .form-check{
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.nickname-form label {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.nickname-form button {
+    font-family: 'Rajdhani', serif;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    background: linear-gradient(360deg, transparent, #8d8d8d);
+    animation: btn-anim1 1s linear infinite;
+    border: none;
+    border-radius: 10px;
+}
+
+.nickname-form button:hover {
+    background: #b6b6b6;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #677b7c, 0 0 25px #6b675d, 0 0 50px #4a5556, 0 0 100px #5e5562;
+}
+
+.nickname-form .result {
+    color: #FFF;
+    font-family: 'Rajdhani', serif;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.nickname-form .result .result-container button {
+    margin-top: 10px;
+}
+
+.site-info .site-title {
+    font-size: 50px;
+    font-family: 'Rajdhani', serif;
+    letter-spacing: -1px;
+    color: grey;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 #000;
+    margin: 50px 0 24px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.site-info .site-description {
+    text-align: center;
+    color: black;
+    font-family: 'Source Code Pro', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 40px;
+    margin: 0 400px 40px;
+}
+
+.site-info .site-description code {
+    color: #987e7e;
+    font-size: 30px;
+}
+
+.error {
+    font-style: italic;
+    font-size: 20px;
+    font-family: 'Rajdhani', serif;
+    text-align: center;
+    font-weight: 700;
+    color: red;
+}
+
+.nickname-form label.firstname {
+    font-style: italic;
+    font-size: 15px;
+    font-family: 'Rajdhani', serif;
+    color: #eeeeee;
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.nickname-form input[type='text']:first-child {
+    margin-bottom: 0;
+}
+
+.nickname-form input[type='text']:last-child {
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .site-info .site-description code {
+        font-size: 25px;
+    }
+
+    .nickname-form {
+        margin-left: 16px;
+        margin-right: 16px;
+        width: 100%;
+    }
+}
