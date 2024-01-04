@@ -1,3 +1,10 @@
+body {
+    background: linear-gradient(-45deg, #ffffff, rgba(184, 255, 206, 0.09));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
 .nickname-form {
     display: flex;
     flex-direction: column;
@@ -33,7 +40,7 @@
 
 .nickname-form input[type='checkbox'] {
     background-image: -webkit-linear-gradient(hsla(0,0%,0%,.1), hsla(0,0%,100%,.1)),
-    -webkit-linear-gradient(left, #989898 50%, #6cf 50%);
+    -webkit-linear-gradient(to left, #989898 50%, #6cf 50%);
     background-size: 100% 100%, 200% 100%;
     background-position: 0 0, 15px 0;
     border-radius: 25px;
@@ -81,10 +88,11 @@
 }
 
 .nickname-form button {
+    font-family: 'Rajdhani', serif;
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #03e9f4;
+    color: #ffffff;
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
@@ -92,33 +100,40 @@
     transition: .5s;
     margin-top: 40px;
     letter-spacing: 4px;
-    background: linear-gradient(90deg, transparent, #03e9f4);
+    background: linear-gradient(360deg, transparent, #8d8d8d);
     animation: btn-anim1 1s linear infinite;
     border: none;
+    border-radius: 10px;
 }
 
 .nickname-form button:hover {
-    background: #03e9f4;
+    background: #b6b6b6;
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+    box-shadow: 0 0 5px #677b7c, 0 0 25px #6b675d, 0 0 50px #4a5556, 0 0 100px #5e5562;
 }
 
 .nickname-form .result {
     color: #FFF;
+    font-family: 'Rajdhani', serif;
     margin-top: 24px;
     display: flex;
     justify-content: center;
+    text-align: center;
+}
+
+.nickname-form .result .result-container button {
+    margin-top: 10px;
 }
 
 .site-info .site-title {
-    font-size: 40px;
-    font-family: 'Rubik Doodle Shadow', serif;
+    font-size: 50px;
+    font-family: 'Rajdhani', serif;
     letter-spacing: -1px;
     color: grey;
     text-transform: uppercase;
     text-shadow: 1px 1px 0 #000;
-    margin: 10px 0 24px;
+    margin: 50px 0 24px;
     text-align: center;
     line-height: 50px;
 }
@@ -130,13 +145,12 @@
     font-size: 20px;
     font-weight: 700;
     line-height: 40px;
-    margin: 0 30px 40px;
-    text-shadow: #2a8d7b -1px -1px;
+    margin: 0 400px 40px;
 }
 
 .site-info .site-description code {
-    color: #c25e62;
-    font-size: 50px;
+    color: #987e7e;
+    font-size: 30px;
 }
 
 .error {
