@@ -54,6 +54,10 @@ class NicknameForm extends Component {
         } catch (error) {
             console.error(error);
         }
+
+        window.dataLayer.push({
+            'event': 'nickname generated'
+        });
     };
 
     handleFirstNameChange = (event) => {
