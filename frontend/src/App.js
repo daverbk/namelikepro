@@ -8,9 +8,9 @@ const newHistory = createBrowserHistory();
 class App extends Component {
     render() {
         return (
-            <Router history={newHistory}>
+            <Router history={newHistory} basename={process.env.PUBLIC_URL}>
                 <Switch>
-                    <Route path='/' exact={true} component={Home}/>
+                    <Route path='/' component={Home}/>
                 </Switch>
             </Router>
         )
