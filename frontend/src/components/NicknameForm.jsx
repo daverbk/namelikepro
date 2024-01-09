@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import button from "bootstrap/js/src/button";
 
-const SERVER_URL = 'http://localhost:8080';
+const SERVER_URL = 'https://yenblbldi3tdmmnpkl5weli74q0wixih.lambda-url.eu-north-1.on.aws';
 
 class NicknameForm extends Component {
     constructor(props) {
@@ -38,7 +38,7 @@ class NicknameForm extends Component {
 
         const requestOptions = {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
+            headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
             body: JSON.stringify({
                 firstName: firstName,
                 lastName: lastName,
