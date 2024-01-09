@@ -17,7 +17,7 @@ public class NicknameGeneration {
     }
 
     @Bean
-    public Function<Nickname, NicknameResponseDto> create() {
+    public Function<Nickname, NicknameResponseDto> generate() {
         return (nickname) -> {
             String generatedNickname = nicknameGeneratorService.generate(nickname);
             return new NicknameResponseDto(generatedNickname);
