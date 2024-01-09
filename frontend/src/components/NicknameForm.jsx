@@ -38,7 +38,7 @@ class NicknameForm extends Component {
 
         const requestOptions = {
             method: 'POST',
-            headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
+            headers: {'Content-Type': 'text/plain', 'spring.cloud.function.definition': 'generate'},
             body: JSON.stringify({
                 firstName: firstName,
                 lastName: lastName,
@@ -49,7 +49,7 @@ class NicknameForm extends Component {
         };
 
         try {
-            const response = await fetch(SERVER_URL + '/generate', requestOptions);
+            const response = await fetch(SERVER_URL, requestOptions);
             const data = await response.json();
             this.setState({nickname: data});
         } catch (error) {
