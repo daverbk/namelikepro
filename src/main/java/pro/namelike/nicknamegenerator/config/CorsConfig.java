@@ -15,7 +15,7 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         // Allow all origins, methods, and headers. Modify as needed.
-        config.addAllowedOrigin("http://localhost:3000/");
+        config.addAllowedOrigin("*"); // Remove trailing slash
         config.addAllowedMethod("*");
         config.addAllowedHeader("*");
         config.setAllowCredentials(true);

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import button from "bootstrap/js/src/button";
 
-const SERVER_URL = 'http://localhost:8080';
+const SERVER_URL = 'https://yenblbldi3tdmmnpkl5weli74q0wixih.lambda-url.eu-north-1.on.aws';
 
 class NicknameForm extends Component {
     constructor(props) {
@@ -38,7 +38,7 @@ class NicknameForm extends Component {
 
         const requestOptions = {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
+            headers: {'Content-Type': 'text/plain', 'spring.cloud.function.definition': 'generate'},
             body: JSON.stringify({
                 firstName: firstName,
                 lastName: lastName,
@@ -49,7 +49,7 @@ class NicknameForm extends Component {
         };
 
         try {
-            const response = await fetch(SERVER_URL + '/generate', requestOptions);
+            const response = await fetch(SERVER_URL, requestOptions);
             const data = await response.json();
             this.setState({nickname: data});
         } catch (error) {
