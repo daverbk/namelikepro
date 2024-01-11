@@ -1,20 +1,18 @@
 import {Component} from "react";
-import {Route, Router, Switch} from "react-router-dom";
-import Home from "./components/Home";
-import { createBrowserHistory } from 'history'
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import './style/App.css';
+import Home from "./components/Home";
 import AboutUs from "./components/AboutUs";
-const newHistory = createBrowserHistory();
 
 class App extends Component {
     render() {
         return (
-            <Router history={newHistory} basename={process.env.PUBLIC_URL}>
-                <Switch>
-                    <Route path='/' exact={true} component={Home}/>
-                    <Route path='/about' exact={true} component={AboutUs}/>
-                </Switch>
-            </Router>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
+                <Routes>
+                    <Route exact path="/" element={<Home/>}/>
+                    <Route exact path="/about" element={<AboutUs/>}/>
+                </Routes>
+            </BrowserRouter>
         )
     }
 }
