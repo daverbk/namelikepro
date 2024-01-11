@@ -11,8 +11,8 @@ class App extends Component {
         return (
             <Router history={newHistory}>
                 <Switch>
-                    <Route path='/' exact={true} component={Home}/>
-                    <Route path='/about' exact={true} component={AboutUs}/>
+                    <Route path='/' component={Home}/>
+                    <Route path='/about' component={AboutUs}/>
                 </Switch>
             </Router>
         )
