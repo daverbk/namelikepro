@@ -3,6 +3,7 @@ import {Route, Router, Switch} from "react-router-dom";
 import Home from "./components/Home";
 import { createBrowserHistory } from 'history'
 import './style/App.css';
+import AboutUs from "./components/AboutUs";
 const newHistory = createBrowserHistory();
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
             <Router history={newHistory}>
                 <Switch>
                     <Route path='/' exact={true} component={Home}/>
+                    <Route path='/about' exact={true} component={AboutUs}/>
                 </Switch>
             </Router>
         )
