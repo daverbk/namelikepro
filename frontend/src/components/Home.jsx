@@ -1,5 +1,6 @@
 import {Component} from "react";
 import NicknameForm from './NicknameForm'
+import {NavLink} from "react-router-dom";
 
 class Home extends Component {
     render() {
@@ -23,7 +24,7 @@ class Home extends Component {
                     </div>
                 </div>
                 <NicknameForm/>
-                <a href="/about" className="about-us-btn">About Us</a>
+                <NavLink to="/about" className="about-us-btn">About Us</NavLink>
             </div>
         );
     }
