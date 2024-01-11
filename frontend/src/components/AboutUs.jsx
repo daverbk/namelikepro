@@ -23,9 +23,9 @@ class AboutUs extends Component {
                     />
                 </div>
                 <p className="star-us">
-                    If you would like to support our beginning
+                    If you'd like to support our beginning
                     please smash a star to the
-                    <a href="https://github.com/daverbk/namelikepro" target="_blank"> project's repo</a>
+                    <a href="https://github.com/daverbk/namelikepro" target="_blank"> project's repo ⭐</a>
                 </p>
             </div>
         );

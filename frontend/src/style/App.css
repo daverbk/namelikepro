@@ -266,4 +266,32 @@ body {
     .site-info .site-description {
         margin: 0;
     }
+
+    .about-us {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 50px;
+    }
+
+    .about-us .users {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .about-us .users .user-column {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .about-us .users .user-column p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .about-us .star-us {
+        margin-bottom: 50px;
+        margin-top: 0;
+        font-size: 16px;
+    }
 }
