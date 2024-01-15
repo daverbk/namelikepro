@@ -19,9 +19,9 @@ To try out the Name Like Pro, visit our [live demo](https://github.com/daverbk/n
 
 ``` shell
 # Clone the repository
-git clone https://github.com/your-username/nickname-generator.git
+git clone https://github.com/daverbk/namelikepro.git
 
-# From project directory run 
+# From project's directory run 
 mvn spring-boot:run
 
 # Navigate to /frontend project directory
